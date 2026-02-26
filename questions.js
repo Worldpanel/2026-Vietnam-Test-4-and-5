@@ -6,7 +6,7 @@ window.QUESTION_BANK = [
 
   {
     key: "mkt_1",
-    section: "Test 4 – Marketing",
+    section: "Test 4 – Marketing: 4 questions | 15 minutes",
     type: "textarea",
     text: "What are the most important aspects of market research?"
   },
@@ -38,7 +38,7 @@ window.QUESTION_BANK = [
 
   {
     key: "da_1",
-    section: "Test 5 – Data Analysis",
+    section: "Test 5 – Data Analysis - 4 questions | 30 minutes",
     type: "textarea",
     text: `
 There are 3 kinds of liquid milk in the Vietnamese market: 
