@@ -77,6 +77,12 @@ function injectOptionStyles(){
   const style = document.createElement("style");
 
   style.innerHTML = `
+   textarea {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #1A1A1A;
+}
     .options{
       display:flex !important;
       flex-direction:column;
