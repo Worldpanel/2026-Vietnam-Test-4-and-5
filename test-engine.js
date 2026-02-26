@@ -81,44 +81,7 @@ function injectOptionStyles(){
       display:flex !important;
       flex-direction:column;
       gap:12px;
-    }
-
-    .option-card{
-      all: unset;
-      box-sizing: border-box;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:14px 16px;
-      border:2px solid #d6e0ea;
-      border-radius:10px;
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .2s ease;
-      font-size:15px;
-      text-align:left;
-      width:100%;
-    }
-
-    .option-card:hover{
-      border-color:#005EB8;
-      background:#f0f7ff;
-    }
-
-    .option-card.selected{
-      border-color:#005EB8;
-      background:#e3f2fd;
-      box-shadow:0 0 0 2px rgba(0,94,184,.15);
-    }
-
-    .option-letter{
-      font-weight:700;
-      color:#005EB8;
-      min-width:28px;
-    }
-
-    .option-text{
-      flex:1;
+    
     }
     #qExtra {
   margin-bottom: 16px;
@@ -274,9 +237,12 @@ function renderQuestion(i) {
   $("qPercent").textContent = percent + "%";
   $("progressBar").style.width = percent + "%";
 
-  let sectionHTML = "";
+ let sectionHTML = "";
 
-if (i === 0) {
+const currentSection = q.section;
+const prevSection = window.QUESTION_BANK[i - 1]?.section;
+
+if (i === 0 || currentSection !== prevSection) {
   sectionHTML = `
     <div style="
       padding:8px 12px;
@@ -286,23 +252,9 @@ if (i === 0) {
       border-radius:6px;
       margin-bottom:10px;
     ">
-      Section 1 of 2 – Numerical Aptitude (32 Questions)
+      ${currentSection}
     </div>
-  `;
-}
-
-if (i === 32) {
-  sectionHTML = `
-    <div style="
-      padding:8px 12px;
-      background:#E3F2FD;
-      color:#005EB8;
-      font-weight:700;
-      border-radius:6px;
-      margin-bottom:10px;
-    ">
-      Section 2 of 2 – Data Interpretation (13 Questions)
-    </div>
+  
   `;
 }
 
@@ -316,39 +268,27 @@ $("qText").innerHTML = `
   $("qExtra").innerHTML = q.extraHTML || "";
 
   const wrap = $("qOptions");
-  wrap.innerHTML = "";
+wrap.innerHTML = "";
 
-  q.options.forEach((opt) => {
+const textarea = document.createElement("textarea");
 
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "option-card";
+textarea.style.width = "100%";
+textarea.style.minHeight = "200px";
+textarea.style.padding = "12px";
+textarea.style.fontSize = "14px";
+textarea.style.borderRadius = "8px";
+textarea.style.border = "1px solid #ccc";
+textarea.style.resize = "vertical";
+textarea.maxLength = 3000;
 
-    btn.innerHTML = `
-      <span class="option-letter">${opt.value}</span>
-      <span class="option-text">
-        ${opt.label.replace(opt.value + ". ", "")}
-      </span>
-    `;
+textarea.value = responses[q.key] || "";
 
-    if (responses[q.key] === opt.value) {
-      btn.classList.add("selected");
-    }
+textarea.oninput = () => {
+  responses[q.key] = textarea.value;
+  localStorage.setItem("exam_responses", JSON.stringify(responses));
+};
 
-    btn.onclick = () => {
-
-      responses[q.key] = opt.value;
-
-      wrap.querySelectorAll(".option-card")
-          .forEach(el => el.classList.remove("selected"));
-
-      btn.classList.add("selected");
-
-      localStorage.setItem("exam_responses", JSON.stringify(responses));
-    };
-
-    wrap.appendChild(btn);
-  });
+wrap.appendChild(textarea);
 
   $("btnNext").textContent =
     i === bank.length - 1 ? "Submit Test" : "Next";
