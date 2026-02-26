@@ -99,14 +99,15 @@ function injectOptionStyles(){
 }
 
 .question-label{
-  font-size:14px;
+  font-size:16px;
   font-weight:600;
   color:#003D73;
   margin-bottom:2px !important;
 }
 
 .question-main{
-  line-height:1.3 !important;
+  font-size:17px !important;
+  line-height:1.5 !important;
   margin-bottom:2px !important;
 }
 
@@ -271,7 +272,11 @@ $("qText").innerHTML = `
 wrap.innerHTML = "";
 
 const textarea = document.createElement("textarea");
-
+// 🚫 Disable paste
+textarea.addEventListener("paste", e => {
+  e.preventDefault();
+  showSoftWarning("Pasting is not allowed.");
+});
 textarea.style.width = "100%";
 textarea.style.minHeight = "200px";
 textarea.style.padding = "12px";
