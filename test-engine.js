@@ -8,7 +8,7 @@ const TOTAL_TIME_SECONDS = Number(CFG.TOTAL_TIME_SECONDS || 45 * 60);
 const SCRIPT_URL = String(CFG.SCRIPT_URL || "");
 
 // ---------------- STATE ----------------
-let timeLeft = 5;
+let timeLeft = TOTAL_TIME_SECONDS;
 let currentIndex = 0;
 let responses = {};
 let email = "";
