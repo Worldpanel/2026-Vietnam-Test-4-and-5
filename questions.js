@@ -79,6 +79,7 @@ What can we say by looking at the above data?
     section: "Test 5 – Data Analysis",
     type: "textarea",
     text: `
+PET FOOD MARKET
 The segment 1 (food for cat) decreased from 2021 to 2022 by 20% (from 1000 units to 800 units).
 There are 3 brands in this segment: Brand A, Brand B and Brand C.
 
@@ -97,6 +98,7 @@ There are 3 brands in this segment: Brand A, Brand B and Brand C.
     section: "Test 5 – Data Analysis",
     type: "textarea",
     text: `
+PET FOOD MARKET
 For each brand, you will find below the number of buyers and the average quantity bought per buyer.
 
 - What is, for each brand, the quantity bought per buyer in 2022?
