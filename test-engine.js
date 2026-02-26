@@ -289,10 +289,6 @@ textarea.addEventListener("paste", e => {
 });
 textarea.style.width = "100%";
 textarea.style.minHeight = "200px";
-textarea.style.padding = "12px";
-textarea.style.fontSize = "14px";
-textarea.style.borderRadius = "8px";
-textarea.style.border = "1px solid #ccc";
 textarea.style.resize = "vertical";
 textarea.maxLength = 3000;
 
