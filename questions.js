@@ -6,28 +6,28 @@ window.QUESTION_BANK = [
 
   {
     key: "mkt_1",
-    section: "Test 4 – Marketing: 4 questions | 15 minutes",
+    section: "Test 4 – Marketing: 1/4 questions | 15 minutes",
     type: "textarea",
     text: "What are the most important aspects of market research?"
   },
 
   {
     key: "mkt_2",
-    section: "Test 4 – Marketing",
+    section: "Test 4 – Marketing: 2/4 questions | 15 minutes",
     type: "textarea",
     text: "What is the difference between consumer’s attitude and behavior?"
   },
 
   {
     key: "mkt_3",
-    section: "Test 4 – Marketing",
+    section: "Test 4 – Marketing: 3/4 questions | 15 minutes",
     type: "textarea",
     text: "What is the difference between qualitative and quantitative research?"
   },
 
   {
     key: "mkt_4",
-    section: "Test 4 – Marketing",
+    section: "Test 4 – Marketing: 4/4 questions | 15 minutes",
     type: "textarea",
     text: "Can you write down an email to Ms. Lan from Nestle asking to postpone the tomorrow presentation as you just discovered that your data are wrong?"
   },
@@ -38,7 +38,7 @@ window.QUESTION_BANK = [
 
   {
     key: "da_1",
-    section: "Test 5 – Data Analysis - 4 questions | 30 minutes",
+    section: "Test 5 – Data Analysis - 1/4 questions | 30 minutes",
     type: "textarea",
     text: `
 There are 3 kinds of liquid milk in the Vietnamese market: 
@@ -61,7 +61,7 @@ the third one is organic milk (Segment 3).
 
   {
     key: "da_2",
-    section: "Test 5 – Data Analysis",
+    section: "Test 5 – Data Analysis - 2/4 questions | 30 minutes"
     type: "textarea",
     text: `
 What can we say by looking at the above data?
@@ -76,7 +76,7 @@ What can we say by looking at the above data?
 
   {
     key: "da_3",
-    section: "Test 5 – Data Analysis",
+    section: "Test 5 – Data Analysis - 3/4 questions | 30 minutes"
     type: "textarea",
     text: `
 PET FOOD MARKET
@@ -95,7 +95,7 @@ There are 3 brands in this segment: Brand A, Brand B and Brand C.
 
   {
     key: "da_4",
-    section: "Test 5 – Data Analysis",
+    section: "Test 5 – Data Analysis - 4/4 questions | 30 minutes"
     type: "textarea",
     text: `
 PET FOOD MARKET
